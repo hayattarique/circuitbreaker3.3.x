@@ -1,0 +1,27 @@
+spring:
+  main:
+    web-application-type: none
+  application:
+    name: circuit-breaker
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+    register-with-eureka: false
+    fetch-registry: true
+resilience4j:
+  circuitbreaker:
+    instances:
+      distributor-network:
+        sliding-window-size: 5
+        failure-rate-threshold: 30
+        wait-duration-in-open-state:
+          seconds: 10
+        permitted-number-of-calls-in-half-open-state: 3
+        automatic-transition-from-open-to-half-open-enabled: true
+        minimum-number-of-calls: 3
+  timelimiter:
+    configs:
+      distributor-network:
+        timeout-duration:
+          seconds: 3
