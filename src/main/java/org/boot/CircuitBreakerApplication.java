@@ -20,9 +20,9 @@ public class CircuitBreakerApplication {
             DistributorDto distributor = distributorService.getDistributor("D001");
             System.out.println(distributor);
         }*/
-        for (int i = 0; i < 100; i++) {
-            String distributorName = distributorService.getDistributorName("D001");
-            System.out.println(distributorName);
+        for (int i = 0; i < 1000; i++) {
+            DistributorDto distributor = distributorService.getDistributor("D001");
+            System.out.println(distributor);
         }
     }
 
