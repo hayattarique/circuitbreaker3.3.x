@@ -5,12 +5,13 @@ import io.github.resilience4j.timelimiter.TimeLimiterConfig;
 import org.springframework.cloud.circuitbreaker.resilience4j.Resilience4JCircuitBreakerFactory;
 import org.springframework.cloud.circuitbreaker.resilience4j.Resilience4JConfigBuilder;
 import org.springframework.cloud.client.circuitbreaker.Customizer;
-import org.springframework.stereotype.Component;
 
 import java.time.Duration;
 import java.util.function.Consumer;
 
 //@Component
+//Optional
+//programmatic
 public class Resilience4JCustomizer implements Customizer<Resilience4JCircuitBreakerFactory> {
     @Override
     public void customize(Resilience4JCircuitBreakerFactory resilience4JCircuitBreakerFactory) {
